@@ -1,0 +1,80 @@
+.kuningGrad{
+    background: rgb(209,186,66);
+    background: linear-gradient(0deg, rgba(209,186,66,1) 12%, rgba(209,133,66,1) 67%);
+    /* background-color: aliceblue; */
+}
+
+
+.transPutih{
+    background-color: rgba(255, 255, 255, 0.226) !important
+}
+
+
+.transHitam{
+    background-color: rgba(5, 5, 5, 0.144) !important
+}
+
+.trans{
+    background-color: rgba(255, 255, 255, 0) !important
+}
+
+.orangefull{
+    background-color: #d18542;
+}
+
+.HitamWhiteGrad{
+    background: rgb(255,255,255);
+background: linear-gradient(0deg, rgba(255,255,255,1) 40%, rgba(0,0,0,0.8127626050420168) 100%);
+}
+
+.HitamHijauGrad{
+    background: rgb(104,159,56);
+    background: linear-gradient(0deg, rgba(104,159,56,1) 19%, rgba(0,0,0,1) 92%);
+}
+
+.HijauHitamGrad{
+    background: rgb(0,0,0);
+background: linear-gradient(0deg, rgba(0,0,0,1) 19%, rgba(104,159,56,1) 96%);
+}
+
+
+.PutihHitamGrad{
+    background: rgb(0,0,0);
+background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(255,255,255,1) 69%);
+}
+
+.HitamPutihGrad{
+    background: rgb(0,0,0);
+background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(209,209,209,1) 38%, rgba(255,255,255,1) 69%);
+}
+
+.abuTua{
+    background-color: #3b3b3b !important;
+}
+
+.KuningIndogo10 {
+    background: rgb(26,35,126);
+background: linear-gradient(0deg, rgba(26,35,126,0.8127626050420168) 86%, rgba(255,238,0,1) 100%);
+}
+
+.KuningBlack {
+    background: rgb(0,0,0);
+background: linear-gradient(0deg, rgba(0,0,0,0.8127626050420168) 86%, rgba(255,238,0,1) 100%);
+}
+
+.hijauPutih {
+    /* background: rgb(255 255 255);
+    background:linear-gradient(0deg, rgb(255 255 255) 86%, rgb(141 199 63) 100%) */
+    background: rgb(255,255,255);
+background: linear-gradient(0deg, rgba(255,255,255,0.9976365546218487) 45%, rgba(17,153,142,1) 100%);
+}
+.gradHijau {
+    background: #11998e !important;  /* fallback for old browsers */
+    /* background: -webkit-linear-gradient(to right, #38ef7d, #11998e) !important;  
+    background: linear-gradient(to right, #38ef7d, #11998e) !important;  */
+}
+.gradHijaukk {
+    background: #11998e !important;  /* fallback for old browsers */
+    /* background: -webkit-linear-gradient(to right, #11998e, #38ef7d) !important;  /* Chrome 10-25, Safari 5.1-6 */
+    /* background: linear-gradient(to right, #11998e, #38ef7d) !important; W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+     */  
+}
