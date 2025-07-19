@@ -1,11 +1,11 @@
 <template>
   <q-list>
     <!-- <q-img src="https://wallpaperaccess.com/full/1311077.jpg" style="width: 100%"> -->
-    <q-img src="img/banner.png" style="width: 100%">
+    <q-img src="img/banner4.png" style="width: 100%">
       <!-- <q-img src="img/card.jpg" style="width: 100%"> -->
       <!-- <q-img src="img/kopx.png" style="width: 100%"> -->
       <div class="absolute-bottom">
-        <span style="font-size:10pt; font-weight:bold">Ver 0.1.6</span>
+        <span style="font-size: 10pt; font-weight: bold">Ver 0.1.6</span>
         <div class="row">
           <!-- <div class="col col-md-2">
                     <q-avatar>
@@ -34,7 +34,6 @@
           :to="data1.router"
           exact
         >
-
           <q-item-section top avatar>
             <q-avatar
               size="32px"
@@ -49,7 +48,6 @@
             <!-- <q-item-label caption lines="2">Dashboard</q-item-label> -->
           </q-item-section>
         </q-item>
-
 
         <q-expansion-item
           v-if="data1.type != 'single' && checkLength2(data1.submenu)"
@@ -80,23 +78,17 @@
                 :content-inset-level="0.5"
                 :key="index2"
               >
-                <q-item-section class="h_sidebar1">{{
-                  data2.nama
-                }}</q-item-section>
+                <q-item-section class="h_sidebar1">{{ data2.nama }}</q-item-section>
               </q-item>
 
               <q-expansion-item
-                v-if="
-                  data2.type != 'single' && checkLength(data2.submenu) == true
-                "
+                v-if="data2.type != 'single' && checkLength(data2.submenu) == true"
                 :content-inset-level="0.5"
                 :key="index2"
               >
                 <template v-slot:header>
                   <q-item-section>
-                    <q-item-label class="h_sidebar1">{{
-                      data2.nama
-                    }}</q-item-label>
+                    <q-item-label class="h_sidebar1">{{ data2.nama }}</q-item-label>
                   </q-item-section>
                 </template>
 
@@ -109,9 +101,7 @@
                       :content-inset-level="0.5"
                       :key="index3"
                     >
-                      <q-item-section class="h_sidebar1">{{
-                        data3.nama
-                      }}</q-item-section>
+                      <q-item-section class="h_sidebar1">{{ data3.nama }}</q-item-section>
                     </q-item>
                   </template>
                 </q-list>
@@ -125,7 +115,7 @@
     <!-- ========================================== ADMIN WEBSITE ============================================= -->
 
     <q-item-label class="bg-yellow-9" header>
-      <span style="color:white">Master Data</span>
+      <span style="color: white">Master Data</span>
     </q-item-label>
 
     <template v-for="(data1, index1) in $store.state.listMenu">
@@ -178,23 +168,17 @@
                 :content-inset-level="0.5"
                 :key="index2"
               >
-                <q-item-section class="h_sidebar1">{{
-                  data2.nama
-                }}</q-item-section>
+                <q-item-section class="h_sidebar1">{{ data2.nama }}</q-item-section>
               </q-item>
 
               <q-expansion-item
-                v-if="
-                  data2.type != 'single' && checkLength(data2.submenu) == true
-                "
+                v-if="data2.type != 'single' && checkLength(data2.submenu) == true"
                 :content-inset-level="0.5"
                 :key="index2"
               >
                 <template v-slot:header>
                   <q-item-section>
-                    <q-item-label class="h_sidebar1">{{
-                      data2.nama
-                    }}</q-item-label>
+                    <q-item-label class="h_sidebar1">{{ data2.nama }}</q-item-label>
                   </q-item-section>
                 </template>
 
@@ -207,9 +191,7 @@
                       :content-inset-level="0.5"
                       :key="index3"
                     >
-                      <q-item-section class="h_sidebar1">{{
-                        data3.nama
-                      }}</q-item-section>
+                      <q-item-section class="h_sidebar1">{{ data3.nama }}</q-item-section>
                     </q-item>
                   </template>
                 </q-list>
@@ -252,7 +234,7 @@ export default {
       MENU.getMenu();
     },
 
-    logout: function() {
+    logout: function () {
       localStorage.removeItem("token");
       localStorage.removeItem("profile");
       this.$router.push("/login");
