@@ -18,6 +18,8 @@ Vue.use(VueRandomColor)
 
 import * as VueGoogleMaps from 'vue2-google-maps'
 
+// console.log($store.state.GOOGLE_API)
+
 Vue.use(VueGoogleMaps, {
   load: {
     key: 'AIzaSyC-CK-C9E_OOkeMe9IkN-Jcj2Np0n3p_ho',

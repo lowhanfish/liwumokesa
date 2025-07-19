@@ -150,6 +150,8 @@ const store1 = {
 
     },
 
+
+
     aksesWilayah : [
       {id:0, uraian : 'Satu Desa'},
       {id:1, uraian : 'Satu Kecamatan'},
