@@ -1,0 +1,288 @@
+table, td, th {  
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  tr:nth-child(even) {background-color: #eeeeee;}
+
+.q-item{
+  /* padding-top: 0px !important; */
+  /* padding-bottom: 0px !important; */
+}
+
+  .tbx table {
+    border-collapse: unset;
+    width: 100%;
+  }
+
+  .tbx table, td, th {  
+    border:0px solid rgb(255, 0, 0);
+    text-align: left;
+    
+  }
+
+ .tbx tr:nth-child(even) {background-color: #ffffff;}
+
+
+  .fab_kecil{
+      width: 45px;
+      height: 20px;
+  }
+
+
+  .tbl_responsive{
+    overflow-x:auto;
+  }
+
+
+  .bgku{ 
+    /* background: url('../img/admin_web_terpadu1.png') no-repeat center center fixed;  */
+    background: url('https://img.freepik.com/premium-photo/business-creativity-inspiration-flat-lay-with-lightbulb-pencil-yellow_254791-595.jpg') no-repeat center center fixed; 
+    /* background-image: linear-gradient(to left, #fdc99a, #ffb778, #ffa457, #ff9034, #ff7a00); */
+    /* background-image: linear-gradient(to right bottom, #a6d584, #a6d584, #a6d584, #a6d584, #a6d584, #a3d97e, #a0dc77, #9de070, #94e85f, #8af04d, #7ef734, #6fff00); */
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 100%;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
+  .formLogin{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    border-radius: 2%;
+  }
+
+  .margin_btn{
+    margin-bottom: 1.5% !important;
+  }
+
+  .tbl_btn{
+    width: 50px !important;
+  }
+
+  .paginate_btn{
+    width: 40px !important;
+  }
+
+  .hrpagin{
+    border: 10px solid #cfd8dc;
+  }
+
+  .hrpagin2{
+    border: 10px solid #ce9f07;
+  }
+
+  .hrpagin3{
+    border: 10px solid #aab4a1;
+  }
+
+
+  .alertku{
+    padding: 3% 0% 3% 0% ;
+    background-color: rgb(212, 95, 150);
+    color: white;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  .frWidget{
+    padding: 1.5%;
+  }
+
+  .frWidgetSub{
+    border-radius: 5px;
+    
+  }
+
+  .frWidgetSub1{
+    /* padding: 3% 0% 3% 0% ; */
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+
+
+  .frWidgetSub2{
+    padding-left:2%; padding-right:2%;
+    padding-top: 4%; padding-bottom: 4%;
+
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+    
+
+  }
+
+  .frame_cari{
+    padding-left: 1%;
+    padding-right: 1%;
+  }
+
+input.mdCheckbox { 
+    width: 20px; 
+    height: 20px; 
+} 
+
+input.mdCheckbox1 { 
+  width: 20px; 
+  height: 20px; 
+  background-color: yellow;
+} 
+
+.div_batas{
+  padding: 10px;
+  background-color: #a5a5a5;
+  color: white;
+  font-weight: 600;
+  font-size: 90%;
+}
+
+
+.hoverImg:hover {
+  /* -webkit-filter: grayscale(100%); 
+  filter: grayscale(100%);  */
+  transform: scale(1.1);
+}
+
+.divLogin {
+  margin-top: 20px;
+  background-color: rgba(0, 0, 0, 0.157);
+  padding: 2%;
+}
+
+.qrcode{
+  width: 30% !important;
+  background-color: rgb(122, 122, 122);
+}
+
+
+.inputRight {
+  padding-left: 1%;
+}
+
+.inputLeft {
+  padding-right: 1%;
+}
+
+
+
+
+.div_top{
+  vertical-align: top;
+}
+
+
+
+.div_row{
+  /* padding: 0% 10% 0% 20%; */
+}
+.div_col{
+  
+  width: 15%;
+  display : inline-block;
+  padding: 10px;
+}
+
+.div_exit_modal{
+  position:absolute; 
+  right:20px; 
+  top:20px
+}
+
+.listDok{
+  padding: 1%;
+}
+.listDokRow{
+  background-color: #ffffff;
+  border-radius: 5px;
+  border-style: solid;
+  border-color: #e0e0e0;
+  border-width: 0.1px;
+
+}
+
+
+.flexing{
+  position: relative;
+}
+
+.listDok_setting{
+  position: absolute;
+  top: 16%;
+  right: 3.5%;
+}
+
+
+
+@media only screen and (max-width: 1024px) {
+  .div_col {
+      width:50%;
+  }
+
+  .div_col{
+  
+    width: 33%;
+    display : inline-block;
+    padding: 10px;
+  }
+  
+}
+
+
+
+
+
+
+
+@media only screen and (max-width: 600px) {
+  .divLogin {
+    margin-top: 0px;
+    background-color: rgba(0, 0, 0, 0.157);
+    padding: 9%;
+  }
+  .qrcode{
+    width: 100% !important;
+    background-color: rgb(122, 122, 122);
+  }
+
+  .inputRight {
+    padding-left: 0%;
+  }
+  
+  .inputLeft {
+    padding-right: 0%;
+  }
+}
+
+
+.divrunning-text{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.resetStyle , td, th {  
+  border: 0px solid #ddd;
+  text-align: left;
+}
+
+
+
