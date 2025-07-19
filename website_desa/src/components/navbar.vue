@@ -16,7 +16,7 @@
           <div class="text-left row">
             <div class="text-center" style="padding-top: 0.1%">
               <q-img
-                src="img/logx.jpeg"
+                src="img/logo_app.png"
                 spinner-color="primary"
                 spinner-size="90px"
                 style="width: 45px; margin-top: 5px"
