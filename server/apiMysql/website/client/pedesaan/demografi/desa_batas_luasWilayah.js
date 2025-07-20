@@ -30,20 +30,23 @@ router.post('/view', (req, res) => {
     if (data_star <0) {data_star = 0} 
 
     var des_kel = ''
+    var des_kel_jml = ''
 
     console.log(req.body)
 
     if (req.body.des_kel == undefined || req.body.des_kel == '') {
         des_kel = ''
+        des_kel_jml = ''
     } else {
         des_kel = `&& datax.des_kel == '`+req.body.des_kel+`'`
+        des_kel_jml = `&& jmlData.des_kel == '`+req.body.des_kel+`'`
     }
 
 
     var query = `
         
         FOR jmlData in desa_batas_luasWilayah
-        FILTER jmlData.uraian LIKE '%`+cari+`%'
+        FILTER jmlData.uraian LIKE '%`+cari+`%' `+des_kel_jml+`
         COLLECT WITH COUNT INTO length
 
         let data = (
