@@ -239,19 +239,53 @@ router.post('/autoComplete', (req, res)=> {
 router.post('/PostList', (req, res)=> {
     console.log(req.body)
     console.log("AAAAAAAAAAA")
-    var filter = ''
-    if (req.body.uraian == null || req.body.uraian == undefined || req.body.uraian == '') {
-        filter = ``
-    } else {
-        filter = `filter data.kecamatan == '`+req.body.uraian+`'`
+
+
+    let data            = req.body;
+    let whereClauses    = [];
+    let params          = [];
+
+    // Filter berdasarkan unit_kerja_id
+    // if (data.unit_kerja_id) {
+    //     whereClauses.push(` unit_kerja.id = '`+data.unit_kerja_id+`' `);
+    //     params.push(data.unit_kerja_id);
+    // }
+
+    // Filter berdasarkan pencarian
+    // if (data.cari) {
+    //     whereClauses.push(`LOWER(unit_kerja.unit_kerja) LIKE LOWER('%`+data.cari+`%')`);
+    //     params.push(data.cari);
+    // }    
+
+    if (!isNaN(parseInt(data.uraian)) && Number.isInteger(Number(data.uraian))) {
+        whereClauses.push(` data.kecamatan == '`+data.uraian+`'`);
+        params.push(data.uraian);
+    }else {
+        whereClauses.push(` LOWER(data.uraian) LIKE LOWER('%`+data.uraian+`%')`);
+        params.push(data.uraian);
     }
+
+    // Gabungkan klausa WHERE jika ada
+    let whereClause = '';
+    if (whereClauses.length > 0) {
+        whereClause = 'filter ' + whereClauses.join(' && ');
+    }
+    
+    // var filter = ''
+    // if (req.body.uraian == null || req.body.uraian == undefined || req.body.uraian == '') {
+    //     filter = ``
+    // } else {
+    //     filter = `filter LOWER(data.kecamatan) == LOWER('`+req.body.uraian+`')`
+    // }
 
 
     var query = `
         FOR data IN des_kel
-        `+filter+`
+        `+whereClause+`
         RETURN data
     `
+    console.log(query);
+    
     db.query(query)
     .then(cursor => cursor.all())
     .then((row, err)=>{
