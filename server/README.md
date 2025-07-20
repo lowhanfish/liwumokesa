@@ -1,4 +1,3 @@
-````markdown
 # Backend Server - Village Management Application
 
 This backend application has been tested using **Node.js version > 18.19.0**.
@@ -18,4 +17,3 @@ NAME_DB=<database name>
 USER_DB=<database username>
 PASS_DB=<database password>
 ```
-````
