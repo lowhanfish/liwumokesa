@@ -1,6 +1,3 @@
-
-
-
 table,
 td,
 th {
@@ -27,45 +24,46 @@ tr:nth-child(even) {
 
 
 
-.mdl-sm{
+.mdl-sm {
     width: 300px !important;
 }
 
-.mdl-sm1{
+.mdl-sm1 {
     width: 400px !important;
 }
 
-.mdl-footer{
-    padding : 5% 0% 5% 0%;
+.mdl-footer {
+    padding: 5% 0% 5% 0%;
     /* padding-top: 120px; */
 }
-.mdl-md{
-    width: 700px !important; 
+
+.mdl-md {
+    width: 700px !important;
     max-width: 80vw !important;
 }
 
-.mdl-mdx{
-    width: 830px !important; 
+.mdl-mdx {
+    width: 830px !important;
     max-width: 80vw !important;
 }
 
 
 
-.mdl-lg{
-    width: 1140px !important; 
+.mdl-lg {
+    width: 1140px !important;
     max-width: 90vw !important;
 }
 
 
-.mdl-lg-h{
+.mdl-lg-h {
     /* width: 1140px !important;  */
     max-width: 95vw !important;
-    height: 820px !important; 
+    height: 820px !important;
     max-height: 120vw !important;
 }
 
 
-.mdl-head{
+.mdl-head {
     margin: auto;
     padding-left: 15px;
     padding-right: 15px;
@@ -73,77 +71,77 @@ tr:nth-child(even) {
     padding-bottom: 15px;
 }
 
-.mdl-footer{
-    padding : 5% 0% 5% 0%;
+.mdl-footer {
+    padding: 5% 0% 5% 0%;
     /* padding-top: 120px; */
 }
 
-.div_input{
+.div_input {
     margin-top: 5px;
 }
 
 
-.bg{
-    background: rgb(209,186,66);
-    background: linear-gradient(0deg, rgba(209,186,66,1) 12%, rgba(209,133,66,1) 67%);
+.bg {
+    background: rgb(209, 186, 66);
+    background: linear-gradient(0deg, rgba(209, 186, 66, 1) 12%, rgba(209, 133, 66, 1) 67%);
 }
 
 
-.alertku{
-    padding: 3% 0% 3% 0% ;
+.alertku {
+    padding: 3% 0% 3% 0%;
     background-color: rgb(212, 95, 150);
     color: white;
     font-weight: 500;
     text-align: center;
-  }
+}
 
 
 
-.topUP{
-    position :absolute;
+.topUP {
+    position: absolute;
     width: 100%;
     margin-top: 0;
 }
 
-.content{
+.content {
     padding-left: 5%;
     padding-right: 5%;
     padding-top: 3%;
 }
 
-.contentBerita{
+.contentBerita {
     padding-left: 10%;
     padding-right: 10%;
     padding-top: 3%;
 }
 
-.hrtitle{
+.hrtitle {
     border-top: 8px solid #11998e;
 }
 
-.hrtitle1{
+.hrtitle1 {
     border-top: 8px solid #f0c024;
 }
 
-.hrdetilberita{
+.hrdetilberita {
     border-top: 8px solid #d6d6d6;
 }
 
-.hrtitlehijau{
+.hrtitlehijau {
     border-top: 8px solid #40ac16;
 }
 
-.hrSurat{
+.hrSurat {
     border-top: 5px solid #00000038;
     margin-top: -3px;
 }
 
 
-.dataPadding{
+.dataPadding {
     padding: 2%;
 }
 
-.dataPaddingFoto{
+.dataPaddingFoto {
     padding-left: 5%;
     padding-right: 5%;
     padding-top: 2%;
@@ -151,7 +149,7 @@ tr:nth-child(even) {
 }
 
 
-.dataPaddingSrct{
+.dataPaddingSrct {
     padding-left: 15%;
     padding-right: 15%;
     padding-top: 5%;
@@ -159,24 +157,25 @@ tr:nth-child(even) {
     transition: transform .2s;
 }
 
-.imgHover{
+.imgHover {
     transition: transform .2s;
 }
 
 .imgHover:hover {
-    transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
-  }
+    transform: scale(1.1);
+    /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
 
 
-.containerku{
+.containerku {
     padding: 2% 10% 0% 10%;
 }
 
-.paddingSideMenu{
+.paddingSideMenu {
     padding: 0% 1% 0% 1%;
 }
 
-.imgList{
+.imgList {
     height: 100px;
     /* border-radius: 3%; */
 }
@@ -190,53 +189,54 @@ tr:nth-child(even) {
 }
 
 
-.tbl_responsive{
-    overflow-x:auto;
-  }
-
-
-
-.hrpagin{
-border: 10px solid #cfd8dc;
+.tbl_responsive {
+    overflow-x: auto;
 }
 
-.hrpagin2{
-border: 10px solid #ce9f07;
+
+
+.hrpagin {
+    border: 10px solid #cfd8dc;
 }
 
-.hrpagin3{
-border: 10px solid #aab4a1;
+.hrpagin2 {
+    border: 10px solid #ce9f07;
 }
 
-.mdl-lgx{
-    width: 1608px !important; 
+.hrpagin3 {
+    border: 10px solid #aab4a1;
+}
+
+.mdl-lgx {
+    width: 1608px !important;
     max-width: 95vw !important;
 }
-.div_exit_modal{
-    position:absolute; 
-    right:20px; 
-    top:20px
-  }
+
+.div_exit_modal {
+    position: absolute;
+    right: 20px;
+    top: 20px
+}
 
 
 @media only screen and (max-width: 600px) {
     .div_input_left {
         padding-left: 0%;
     }
-    
+
     .div_input_right {
         padding-right: 0%;
     }
 
-    .containerku{
+    .containerku {
         padding: 5% 2% 0% 2%;
     }
 
-    .paddingSideMenu{
+    .paddingSideMenu {
         padding: 2% 0% 0% 0%;
     }
 
-    .dataPaddingSrct{
+    .dataPaddingSrct {
         padding-left: 5%;
         padding-right: 5%;
         padding-top: 2%;
@@ -244,18 +244,17 @@ border: 10px solid #aab4a1;
     }
 }
 
-.a_polos{
+.a_polos {
     text-decoration: none;
 }
 
-.mdl-lg{
-    width: 1140px !important; 
+.mdl-lg {
+    width: 1140px !important;
     max-width: 90vw !important;
 }
 
-/* ul {
-    list-style-type : none !important;
-    display : inline !important; /* para que ponga los elementos de una lista ordenados horizontal
-  } */
+ul {
+    /* list-style-type: none !important; */
+    /* display: inline !important; */
 
- 
+}

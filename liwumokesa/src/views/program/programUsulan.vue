@@ -30,23 +30,23 @@
           <!-- <hr class="hrtitle"> -->
           <div class="q-pa-md">
             <q-list bordered class="rounded-borders">
-
               <div v-for="(data, index) in listData" :key="data._key">
                 <q-expansion-item>
                   <template v-slot:header>
                     <q-item-section avatar>
-                      <q-avatar label="1" color="primary" text-color="white">{{indexing(index+1)}}</q-avatar>
+                      <q-avatar label="1" color="primary" text-color="white">{{
+                        indexing(index + 1)
+                      }}</q-avatar>
                     </q-item-section>
 
                     <q-item-section>
-                      <span class="h_ListJudulBerita">{{data.uraian}}</span>
+                      <span class="h_ListJudulBerita">{{ data.uraian }}</span>
                     </q-item-section>
                   </template>
 
                   <q-card>
                     <q-card-section class="bg-grey-3">
                       <span class="h_ListKeteranganBerita" v-html="data.keterangan">
-                       
                       </span>
                     </q-card-section>
                   </q-card>
@@ -54,7 +54,6 @@
 
                 <q-separator />
               </div>
-
             </q-list>
           </div>
 
@@ -99,55 +98,52 @@ export default {
       page_last: 0,
       cari_value: "",
 
-      UMUM: UMUM
+      UMUM: UMUM,
     };
   },
   methods: {
-    getView : function(){
+    getView: function () {
       this.$store.commit("shoWLoading");
       fetch(this.$store.state.url.URL_CNT_PROGRAM_USULAN + "view", {
-          method: "POST",
-          headers: {
+        method: "POST",
+        headers: {
           "content-type": "application/json",
-          authorization: "kikensbatara " + localStorage.token
-          },
-          body: JSON.stringify({
-              data_ke: this.page_first,
-              page_limit : this.page_limit,
-              cari_value: this.cari_value
-          })
+          authorization: "kikensbatara " + localStorage.token,
+        },
+        body: JSON.stringify({
+          data_ke: this.page_first,
+          page_limit: this.page_limit,
+          cari_value: this.cari_value,
+        }),
       })
-          .then(res => res.json())
-          .then(res_data => {
-              this.listData = res_data.data;
-              this.page_last = res_data.jmlData;
-              this.$store.commit("hideLoading");
-              console.log(res_data);
-      });
+        .then((res) => res.json())
+        .then((res_data) => {
+          this.listData = res_data.data;
+          this.page_last = res_data.jmlData;
+          this.$store.commit("hideLoading");
+          console.log(res_data);
+        });
     },
 
-    pushKegiatan: function(id) {
+    pushKegiatan: function (id) {
       this.$router.push("/detilKegiatan?id=" + id);
     },
 
-    cari_data: function() {
+    cari_data: function () {
       this.page_first = 1;
       this.getView();
     },
-    indexing : function(index){
-        var idx = ((this.page_first-1)*this.page_limit)+index
-        return idx
+    indexing: function (index) {
+      var idx = (this.page_first - 1) * this.page_limit + index;
+      return idx;
     },
   },
   mounted() {
     this.$store.state.kegiatan.id = this.$route.query.id;
     // this.$store.commit('getOne')
     this.getView();
-  }
+  },
 };
 </script>
 
-<style>
-</style>
-
-
+<style></style>

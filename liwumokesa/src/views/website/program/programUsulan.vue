@@ -1,5 +1,5 @@
 <template>
-  <div class="about" style="padding:15px">
+  <div class="about" style="padding: 15px">
     <q-card bordered class="my-card">
       <q-card-section class="bg-grey-7 text-white">
         <div class="row">
@@ -10,86 +10,139 @@
           <div class="col-12 col-md-2"></div>
           <div class="col-12 col-md-4">
             <div class="row">
-              <q-input v-model="cari_value" @keyup="cari_data()" outlined square :dense="true" class="bg-white" style="width:90%"/>
-              <q-btn glossy class="bg-light-blue-10" @click="mdl_add = true, $store.commit('addEditor')" dense flat icon="add" style="width:10%">
-                  <q-tooltip content-class="bg-light-blue-10" content-style="font-size: 13px">
-                    Click untuk menambah data
-                  </q-tooltip>
+              <q-input
+                v-model="cari_value"
+                @keyup="cari_data()"
+                outlined
+                square
+                :dense="true"
+                class="bg-white"
+                style="width: 90%"
+              />
+              <q-btn
+                glossy
+                class="bg-light-blue-10"
+                @click="(mdl_add = true), $store.commit('addEditor')"
+                dense
+                flat
+                icon="add"
+                style="width: 10%"
+              >
+                <q-tooltip
+                  content-class="bg-light-blue-10"
+                  content-style="font-size: 13px"
+                >
+                  Click untuk menambah data
+                </q-tooltip>
               </q-btn>
             </div>
-
           </div>
         </div>
       </q-card-section>
 
       <q-separator dark inset />
 
-      
-
       <q-card-section>
-
-
         <div class="row">
-          <div class="col-md-6 col-12 input_kiri " >
-            <select :disabled="disable_kec" v-model="form.kecamatan" @change="chageDesa(), cari_data()" class="bg-white"  outlined square :dense="true">
+          <div class="col-md-6 col-12 input_kiri">
+            <select
+              :disabled="disable_kec"
+              v-model="form.kecamatan"
+              @change="chageDesa(), cari_data()"
+              class="bg-white"
+              outlined
+              square
+              :dense="true"
+            >
               <option value="">-- Semua Kecamatan --</option>
-              <option v-for="data in $store.state.listKecamatan" :key="data.id" :value="data.id">{{data.uraian}}</option>
+              <option
+                v-for="data in $store.state.listKecamatan"
+                :key="data.id"
+                :value="data.id"
+              >
+                {{ data.uraian }}
+              </option>
             </select>
           </div>
 
-          <div class="col-md-6 col-12 input_kanan ">
-            <select :disabled="disable_des" v-model="form.des_kel" @change="cari_data()" class="bg-white"  outlined square :dense="true">
+          <div class="col-md-6 col-12 input_kanan">
+            <select
+              :disabled="disable_des"
+              v-model="form.des_kel"
+              @change="cari_data()"
+              class="bg-white"
+              outlined
+              square
+              :dense="true"
+            >
               <option value="">-- Semua Desa --</option>
-              <option v-for="data in $store.state.listDesKel" :key="data.uniqid" :value="data.uniqid">{{data.uraian}}</option>
+              <option
+                v-for="data in $store.state.listDesKel"
+                :key="data.uniqid"
+                :value="data.uniqid"
+              >
+                {{ data.uraian }}
+              </option>
             </select>
           </div>
         </div>
 
         <!-- <h1>{{form.des_kel}}</h1> -->
 
-        <hr class="hrpagin">
+        <hr class="hrpagin" />
 
         <div class="tbl_responsive">
           <!-- =================================================== KONTENT =========================================================== -->
-            <table width="100%">
-              <tr class="h_table_head bg-grey-5">
-                <th width="5%" class="text-center">No</th>
-                <th width="35%" class="text-center">Program</th>
-                <th width="50%">Keterangan</th>
-                <th width="10%"></th>
-              </tr>
-              <tr class="h_table_body" v-for="(data, index) in list_data" :key="data.id">
-                <td class="text-center h_top">{{indexing(index+1)}}.</td>
-                <td class="h_top">{{data.uraian}}</td>
-                <td v-html="data.keterangan"></td>
-                <td class="text-center h_top">
-                  <q-btn-group>
-                    <q-btn @click="mdl_edit = true, selectData(data), $store.commit('addEditor')" glossy color="orange" icon="create" class="tbl_btn">
-                      <q-tooltip content-class="bg-orange-9" content-style="font-size: 13px">
-                        Click untuk mengubah data ini
-                      </q-tooltip>  
-                    </q-btn>
-                    <q-btn @click="mdl_hapus = true, selectData(data)" glossy color="negative" icon="delete_forever" class="tbl_btn">
-                      <q-tooltip content-class="bg-red" content-style="font-size: 13px">
-                        Click untuk menghapus data ini
-                      </q-tooltip>
-                    </q-btn>
-                  </q-btn-group>
-                 
+          <table width="100%">
+            <tr class="h_table_head bg-grey-5">
+              <th width="5%" class="text-center">No</th>
+              <th width="35%" class="text-center">Program</th>
+              <th width="50%">Keterangan</th>
+              <th width="10%"></th>
+            </tr>
+            <tr class="h_table_body" v-for="(data, index) in list_data" :key="data.id">
+              <td class="text-center h_top">{{ indexing(index + 1) }}.</td>
+              <td class="h_top">{{ data.uraian }}</td>
+              <td v-html="data.keterangan"></td>
+              <td class="text-center h_top">
+                <q-btn-group>
+                  <q-btn
+                    @click="
+                      (mdl_edit = true), selectData(data), $store.commit('addEditor')
+                    "
+                    glossy
+                    color="orange"
+                    icon="create"
+                    class="tbl_btn"
+                  >
+                    <q-tooltip
+                      content-class="bg-orange-9"
+                      content-style="font-size: 13px"
+                    >
+                      Click untuk mengubah data ini
+                    </q-tooltip>
+                  </q-btn>
+                  <q-btn
+                    @click="(mdl_hapus = true), selectData(data)"
+                    glossy
+                    color="negative"
+                    icon="delete_forever"
+                    class="tbl_btn"
+                  >
+                    <q-tooltip content-class="bg-red" content-style="font-size: 13px">
+                      Click untuk menghapus data ini
+                    </q-tooltip>
+                  </q-btn>
+                </q-btn-group>
+              </td>
+            </tr>
+          </table>
 
-                </td>
-              </tr>
-
-            </table>
-
-            
-                
- <!-- <textarea id="froala-editor">Initialize the Froala WYSIWYG HTML Editor on a textarea.</textarea> -->
+          <!-- <textarea id="froala-editor">Initialize the Froala WYSIWYG HTML Editor on a textarea.</textarea> -->
           <!-- =================================================== KONTENT =========================================================== -->
         </div>
-        <hr class="hrpagin">
-        <br>
-        
+        <hr class="hrpagin" />
+        <br />
 
         <div class="flex flex-center">
           <q-pagination
@@ -98,7 +151,6 @@
             :max="page_last"
             :max-pages="4"
             color="orange-14"
-
             :direction-links="true"
             :boundary-links="true"
             icon-first="skip_previous"
@@ -109,377 +161,321 @@
           </q-pagination>
         </div>
 
-
-
-
-        <br>
-
-
-
-
-
-
-
-
+        <br />
       </q-card-section>
     </q-card>
 
+    <!-- =================================================== MODAL =========================================================== -->
 
+    <!-- ================================================= MODAL TAMBAH ================================================ -->
+    <q-dialog v-model="mdl_add" persistent>
+      <q-card class="mdl-md">
+        <q-card-section class="bg-grey-7">
+          <div class="text-h6 h_modalhead">Simpan Data</div>
+        </q-card-section>
 
+        <form @submit.prevent="addData()">
+          <q-card-section class="q-pt-none">
+            <br />
+            <span class="h_lable">Nama Program</span>
+            <q-input
+              v-model="form.uraian"
+              outlined
+              square
+              :dense="true"
+              class="bg-white margin_btn"
+            />
+            <br />
+            <span class="h_lable">Keterangan</span>
+            <!-- <froala style="z-index:9999" :tag="'textarea'" :config="$store.state.configFroala" v-model="form.keterangan">Init text</froala> -->
+            <textarea id="editor" v-model="form.keterangan"></textarea>
+          </q-card-section>
 
+          <q-card-actions class="bg-grey-4 mdl-footer" align="right">
+            <q-btn :loading="btn_add" color="primary" @click="addData()" label="Simpan" />
+            <q-btn label="Batal" color="negative" v-close-popup />
+          </q-card-actions>
+        </form>
+      </q-card>
+    </q-dialog>
+    <!-- ================================================= MODAL TAMBAH ================================================ -->
 
-          <!-- =================================================== MODAL =========================================================== -->
+    <!-- ================================================= MODAL EDIT ================================================ -->
+    <q-dialog v-model="mdl_edit" persistent>
+      <q-card class="mdl-md">
+        <q-card-section class="bg-orange">
+          <div class="text-h6 h_modalhead">Edit Data</div>
+        </q-card-section>
 
+        <q-card-section class="q-pt-none">
+          <br />
+          <span class="h_lable">Nama Program</span>
+          <q-input
+            v-model="form.uraian"
+            outlined
+            square
+            :dense="true"
+            class="bg-white margin_btn"
+          />
+          <br />
+          <span class="h_lable">Keterangan</span>
+          <textarea id="editor" v-model="form.keterangan"></textarea>
+          <!-- <froala v-if="mdl_edit" style="z-index:9999" :tag="'textarea'" :config="$store.state.configFroala" v-model="form.keterangan">Init text</froala> -->
 
-            <!-- ================================================= MODAL TAMBAH ================================================ -->
-              <q-dialog v-model="mdl_add" persistent>
-                <q-card class="mdl-md">
-                  <q-card-section class="bg-grey-7">
-                    <div class="text-h6 h_modalhead">Simpan Dataxxx</div>
-                  </q-card-section>
+          <br />
+        </q-card-section>
 
-                  <form @submit.prevent="addData()">
-                    <q-card-section class="q-pt-none">
-                        <br>
-                        <span class="h_lable ">Nama Program</span>
-                        <q-input v-model="form.uraian" outlined square :dense="true" class="bg-white margin_btn" /> 
-                        <br>
-                        <span class="h_lable ">Keterangan</span>
-                         <!-- <froala style="z-index:9999" :tag="'textarea'" :config="$store.state.configFroala" v-model="form.keterangan">Init text</froala> -->
-                         <textarea id="editor" v-model="form.keterangan"></textarea>
+        <q-card-actions class="bg-grey-4 mdl-footer" align="right">
+          <q-btn :loading="btn_add" color="primary" @click="editData()" label="Simpan" />
+          <q-btn
+            @click="emptytData(), (mdl_edit = false)"
+            label="Batal"
+            color="negative"
+          />
+        </q-card-actions>
+      </q-card>
+    </q-dialog>
+    <!-- ================================================= MODAL EDIT ================================================ -->
 
-                    </q-card-section>
+    <!-- ================================================ MODAL HAPUS ================================================ -->
+    <q-dialog v-model="mdl_hapus" persistent>
+      <q-card class="mdl-sm">
+        <q-card-section class="q-pt-none text-center orageGrad">
+          <form @submit.prevent="removeData">
+            <br />
+            <img src="img/alert.png" alt="" width="75" /> <br />
+            <span class="h_notifikasi">APAKAH ANDA YAKIN INGIN MENGHAPUS DATA INI??</span>
+            <input type="submit" style="position: absolute; left: -9999px" />
+            <br />
+            <br />
 
-                    <q-card-actions class="bg-grey-4 mdl-footer" align="right">
-                        <q-btn :loading="btn_add" color="primary" @click="addData()" label="Simpan" />
-                        <q-btn label="Batal" color="negative" v-close-popup />
-                    </q-card-actions>
+            <q-btn label="Batal" size="sm" color="negative" v-close-popup />
+            &nbsp;
+            <q-btn type="submit" label="Hapus" size="sm" color="primary" v-close-popup />
+          </form>
+        </q-card-section>
+      </q-card>
+    </q-dialog>
 
-                  </form>
-                </q-card>
-              </q-dialog>
-            <!-- ================================================= MODAL TAMBAH ================================================ -->
+    <!-- ================================================ MODAL HAPUS ================================================ -->
 
-
-            <!-- ================================================= MODAL EDIT ================================================ -->
-               <q-dialog v-model="mdl_edit" persistent>
-                <q-card class="mdl-md">
-                  <q-card-section class="bg-orange">
-                    <div class="text-h6 h_modalhead">Edit Data</div>
-                  </q-card-section>
-
-                  <q-card-section class="q-pt-none">
-                        <br>
-                        <span class="h_lable ">Nama Program</span>
-                        <q-input v-model="form.uraian" outlined square :dense="true" class="bg-white margin_btn" /> 
-                        <br>
-                        <span class="h_lable ">Keterangan</span>
-                        <textarea id="editor" v-model="form.keterangan"></textarea>
-                         <!-- <froala v-if="mdl_edit" style="z-index:9999" :tag="'textarea'" :config="$store.state.configFroala" v-model="form.keterangan">Init text</froala> -->
-                         
-
-                        <br>
-                  </q-card-section>
-
-                  <q-card-actions class="bg-grey-4 mdl-footer" align="right">
-                    
-                      <q-btn :loading="btn_add" color="primary" @click="editData()" label="Simpan" />
-                      <q-btn @click="emptytData(), mdl_edit = false" label="Batal" color="negative" />
-             
-                  </q-card-actions>
-                </q-card>
-              </q-dialog>
-            <!-- ================================================= MODAL EDIT ================================================ -->
-
-            <!-- ================================================ MODAL HAPUS ================================================ -->
-                  <q-dialog v-model="mdl_hapus" persistent>
-                    <q-card class="mdl-sm ">
-                      <q-card-section class="q-pt-none text-center orageGrad">
-                          <form @submit.prevent="removeData">
-                              <br>
-                              <img src="img/alert.png" alt="" width="75"> <br>
-                              <span class="h_notifikasi">APAKAH ANDA YAKIN INGIN MENGHAPUS DATA INI??</span>
-                              <input type="submit" style="position: absolute; left: -9999px"/>
-                              <br>
-                              <br>
-
-                            <q-btn label="Batal" size="sm" color="negative"  v-close-popup/>
-                            &nbsp;
-                            <q-btn type="submit" label="Hapus" size="sm" color="primary" v-close-popup/>
-
-                          </form>
-                      </q-card-section>
-                    </q-card>
-                  </q-dialog>
-
-            <!-- ================================================ MODAL HAPUS ================================================ -->
-
-
-
-
-          <!-- =================================================== MODAL =========================================================== -->
-
-
-
-
+    <!-- =================================================== MODAL =========================================================== -->
   </div>
 </template>
 
-
 <script>
-
-import UMUM from  '../../../library/umum'
-import WILAYAH from  '../../../library/getWilayah'
-import uniqid from 'uniqid';
+import UMUM from "../../../library/umum";
+import WILAYAH from "../../../library/getWilayah";
+import uniqid from "uniqid";
 
 export default {
   data() {
     return {
+      form: {
+        id: "",
+        uraian: "",
+        keterangan: "",
+        createdAt: "",
+        des_kel: "",
+        kecamatan: "",
+      },
 
-        form : {
-            id : '',
-            uraian : '',
-            keterangan: '',
-            createdAt : '',
-            des_kel : '',
-            kecamatan : '',
-        },
+      list_data: [],
+      page_limit: 8,
+      page_first: 1,
+      page_last: 0,
+      cari_value: "",
+      cek_load_data: true,
 
+      mdl_add: false,
+      mdl_edit: false,
+      mdl_hapus: false,
+      btn_add: false,
 
-
-
-
-        list_data : [],
-        page_limit : 8,
-        page_first: 1,
-        page_last: 0,
-        cari_value: "",
-        cek_load_data : true,
-
-
-        mdl_add: false,
-        mdl_edit: false,
-        mdl_hapus : false,
-        btn_add: false,
-
-
-        disable_kec : false,
-        disable_des : false,
-    }
+      disable_kec: false,
+      disable_des: false,
+    };
   },
   methods: {
-
-
-    getView : function(){
+    getView: function () {
       this.$store.commit("shoWLoading");
       fetch(this.$store.state.url.URL_ADM_PROGRAM_USULAN + "view", {
-          method: "POST",
-          headers: {
+        method: "POST",
+        headers: {
           "content-type": "application/json",
-          authorization: "kikensbatara " + localStorage.token
-          },
-          body: JSON.stringify({
-              kecamatan : this.form.kecamatan,
-              des_kel : this.form.des_kel,
-              data_ke: this.page_first,
-              page_limit : this.page_limit,
-              cari_value: this.cari_value
-          })
+          authorization: "kikensbatara " + localStorage.token,
+        },
+        body: JSON.stringify({
+          kecamatan: this.form.kecamatan,
+          des_kel: this.form.des_kel,
+          data_ke: this.page_first,
+          page_limit: this.page_limit,
+          cari_value: this.cari_value,
+        }),
       })
-          .then(res => res.json())
-          .then(res_data => {
-              this.list_data = res_data.data;
-              this.page_last = res_data.jmlData;
-              this.$store.commit("hideLoading");
-            //   console.log(res_data);
-      });
-    },
-
-
-    addData : function(number) {
-        this.form.id = uniqid();
-        this.form.keterangan = document.getElementById("editor").value;
-        console.log(this.form.id)
-        this.form.createdAt = UMUM.NOW()
-        fetch(this.$store.state.url.URL_ADM_PROGRAM_USULAN + "addData", {
-            method: "POST",
-            headers: {
-                "content-type": "application/json",
-                authorization: "kikensbatara " + localStorage.token
-            },
-            body: JSON.stringify(this.form)
-        }).then(res_data => {
-            this.Notify('Sukses Menambah Data', 'primary', 'check_circle_outline');
-            this.getView();
+        .then((res) => res.json())
+        .then((res_data) => {
+          this.list_data = res_data.data;
+          this.page_last = res_data.jmlData;
+          this.$store.commit("hideLoading");
+          //   console.log(res_data);
         });
-
-        // console.log(document.getElementById("editor").value)
     },
 
+    addData: function (number) {
+      this.form.id = uniqid();
+      this.form.keterangan = document.getElementById("editor").value;
+      console.log(this.form.id);
+      this.form.createdAt = UMUM.NOW();
+      fetch(this.$store.state.url.URL_ADM_PROGRAM_USULAN + "addData", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+          authorization: "kikensbatara " + localStorage.token,
+        },
+        body: JSON.stringify(this.form),
+      }).then((res_data) => {
+        this.Notify("Sukses Menambah Data", "primary", "check_circle_outline");
+        this.getView();
+      });
 
-    editData : function(){
-        this.form.keterangan = document.getElementById("editor").value;
+      // console.log(document.getElementById("editor").value)
+    },
+
+    editData: function () {
+      this.form.keterangan = document.getElementById("editor").value;
       fetch(this.$store.state.url.URL_ADM_PROGRAM_USULAN + "editData", {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-            authorization: "kikensbatara " + localStorage.token
-          },
-          body: JSON.stringify(this.form)
-      }).then(res_data => {
-          this.Notify('Sukses Merubah Data', 'warning', 'check_circle_outline');
-          this.getView();
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+          authorization: "kikensbatara " + localStorage.token,
+        },
+        body: JSON.stringify(this.form),
+      }).then((res_data) => {
+        this.Notify("Sukses Merubah Data", "warning", "check_circle_outline");
+        this.getView();
       });
     },
 
-    removeData : function(E){
+    removeData: function (E) {
       fetch(this.$store.state.url.URL_ADM_PROGRAM_USULAN + "removeData", {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-            authorization: "kikensbatara " + localStorage.token
-          },
-          body: JSON.stringify(this.form)
-      }).then(res_data => {
-          this.Notify('Sukses Menghapus Data', 'negative', 'check_circle_outline');
-          this.getView();
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+          authorization: "kikensbatara " + localStorage.token,
+        },
+        body: JSON.stringify(this.form),
+      }).then((res_data) => {
+        this.Notify("Sukses Menghapus Data", "negative", "check_circle_outline");
+        this.getView();
       });
-
     },
-    selectData : function(data){
-
-            this.form.id = data.id;
-            this.form.uraian = data.uraian;
-            this.form.keterangan= data.keterangan;
-            this.form.createdAt = data.createdAt;
+    selectData: function (data) {
+      this.form.id = data.id;
+      this.form.uraian = data.uraian;
+      this.form.keterangan = data.keterangan;
+      this.form.createdAt = data.createdAt;
     },
 
-    emptytData : function(data){
- 
-            this.form.id = '';
-            this.form.uraian = '';
-            this.form.keterangan= null;
-            this.form.createdAt = '';
+    emptytData: function (data) {
+      this.form.id = "";
+      this.form.uraian = "";
+      this.form.keterangan = null;
+      this.form.createdAt = "";
     },
 
-
-    chageDesa(){
-      this.form.des_kel = ''
-      if (this.form.kecamatan == '' || this.form.kecamatan == undefined || this.form.kecamatan == null) {
+    chageDesa() {
+      this.form.des_kel = "";
+      if (
+        this.form.kecamatan == "" ||
+        this.form.kecamatan == undefined ||
+        this.form.kecamatan == null
+      ) {
         WILAYAH.postDesKelAutocomplete();
       } else {
         WILAYAH.postDesKelAutocomplete(this.form.kecamatan);
-        
       }
     },
 
+    // ====================================== PAGINATE ====================================
+    Notify: function (message, positive, icon) {
+      this.$q.notify({
+        message: message,
+        color: positive,
+        icon: icon,
+        position: "top",
+        timeout: 500,
+      });
+    },
+
+    cari_data: function () {
+      this.page_first = 1;
+      this.getView();
+    },
+
+    indexing: function (index) {
+      var idx = (this.page_first - 1) * this.page_limit + index;
+      return idx;
+    },
+
+    tunggu: async function () {
+      await WILAYAH.getListKecamatan();
+      await WILAYAH.getListDesKelFull();
+
+      if (
+        profile.des_kel == null ||
+        profile.des_kel == undefined ||
+        profile.des_kel == ""
+      ) {
+        console.log(this.$store.state.listDesKel[0].uniqid);
+        this.form.des_kel = this.$store.state.listDesKel[0].uniqid;
+      } else {
+        this.form.des_kel = profile.des_kel;
+      }
+    },
+
+    filterSelect: function (profile) {
+      if (profile.aksesWilayah == 0) {
+        WILAYAH.getListDesKelFull();
+        this.form.des_kel = profile.des_kel;
+        this.disable_des = true;
+        this.disable_kec = true;
+      } else if (profile.aksesWilayah == 1) {
+        this.form.kecamatan = profile.kecamatan;
+        WILAYAH.postDesKel(profile.kecamatan);
+        this.disable_kec = true;
+        this.disable_des = false;
+      } else if (profile.aksesWilayah == 2) {
+        WILAYAH.getListDesKelFull();
+        this.disable_kec = false;
+        this.disable_des = false;
+      }
+    },
 
     // ====================================== PAGINATE ====================================
-        Notify : function(message, positive, icon){
-          this.$q.notify({
-            message: message,
-            color: positive,
-            icon: icon,
-            position : 'top',
-            timeout: 500,
-          })
-        },
-
-        cari_data : function(){
-            this.page_first = 1;
-            this.getView();
-        },
-
-        indexing : function(index){
-            var idx = ((this.page_first-1)*this.page_limit)+index
-            return idx
-        },
-
-
-        tunggu : async function(){
-          await WILAYAH.getListKecamatan();
-          await WILAYAH.getListDesKelFull();
-
-          if (profile.des_kel == null || profile.des_kel == undefined || profile.des_kel == '') {
-            console.log(this.$store.state.listDesKel[0].uniqid)
-            this.form.des_kel = this.$store.state.listDesKel[0].uniqid
-          } else {
-            this.form.des_kel = profile.des_kel
-          }
-        },
-
-
-
-
-
-
-
-
-
-        filterSelect : function(profile){
-          if (profile.aksesWilayah == 0) {
-            WILAYAH.getListDesKelFull();
-            this.form.des_kel = profile.des_kel
-            this.disable_des = true
-            this.disable_kec = true
-          } else if (profile.aksesWilayah == 1) {
-            this.form.kecamatan = profile.kecamatan
-            WILAYAH.postDesKel(profile.kecamatan)
-            this.disable_kec = true
-            this.disable_des = false
-
-          } else if (profile.aksesWilayah == 2) {
-            WILAYAH.getListDesKelFull();
-            this.disable_kec = false
-            this.disable_des = false
-          }
-        },
-
-
-
-
-    // ====================================== PAGINATE ====================================
-
-
-
-
-
-
-
   },
 
-  mounted () {
+  mounted() {
+    var profilex = JSON.parse(localStorage.profile);
+    var profile = profilex.profile;
+    this.$store.state.ID_DES_KEL = profile.des_kel;
 
-
-    
-    var profilex = JSON.parse(localStorage.profile)
-    var profile = profilex.profile
-    this.$store.state.ID_DES_KEL = profile.des_kel
-      
-    
     // this.tunggu();
-    
-    this.filterSelect(profile)
-    // console.log(this.form.des_kel)
 
+    this.filterSelect(profile);
+    // console.log(this.form.des_kel)
 
     this.getView();
 
-    new FroalaEditor('textarea#froala-editor')
-        // tinymce.init({
-        //   selector: 'textarea',
-        //   plugins: 'a11ychecker advcode casechange formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker',
-        //   toolbar: 'a11ycheck addcomment showcomments casechange checklist code formatpainter pageembed permanentpen table',
-        //   toolbar_mode: 'floating',
-        //   tinycomments_mode: 'embedded',
-        //   tinycomments_author: 'Author name',
-        // });
-      
+    new FroalaEditor("textarea#froala-editor");
+    // tinymce.init({
+    //   selector: 'textarea',
+    //   plugins: 'a11ychecker advcode casechange formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker',
+    //   toolbar: 'a11ycheck addcomment showcomments casechange checklist code formatpainter pageembed permanentpen table',
+    //   toolbar_mode: 'floating',
+    //   tinycomments_mode: 'embedded',
+    //   tinycomments_author: 'Author name',
+    // });
   },
-}
+};
 </script>
-
-
-
-
- 

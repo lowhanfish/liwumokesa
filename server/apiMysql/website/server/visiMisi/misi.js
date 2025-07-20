@@ -22,6 +22,8 @@ router.get('/', (req, res) => {
 
 router.post('/view', (req, res) => {
  
+
+    // console.log("Misi on server")
     var data_ke = req.body.data_ke - 1
     var data_batas = req.body.page_limit;
     var data_star = (data_ke)* data_batas;

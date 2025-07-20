@@ -38,13 +38,13 @@
         <!-- <q-toolbar-title style="padding:10px"><b>SIDAKCAMAT</b></q-toolbar-title>  -->
 
         <div v-if="!checker">
-          <ul>
+          <ul class="ulNav">
             <template v-for="(data, index) in $store.state.menu">
-              <li v-if="data.type == 'single'" :key="'menu' + index">
+              <li class="liNav" v-if="data.type == 'single'" :key="'menu' + index">
                 <router-link :to="data.router">{{ data.nama }}</router-link>
               </li>
 
-              <li v-if="data.type == 'multi'" :key="'menu' + index">
+              <li class="liNav" v-if="data.type == 'multi'" :key="'menu' + index">
                 <a href="javascript:void(0)">
                   <b>{{ data.nama }} <q-icon name="expand_more" /></b>
                   <q-menu transition-show="jump-down" transition-hide="jump-up">
@@ -206,19 +206,18 @@ export default {
 </script>
 
 <style>
-ul {
+.ulNav {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  /* background-color: #333333; */
 }
 
-li {
+.liNav {
   float: left;
 }
 
-li a {
+.liNav a {
   display: block;
   color: white;
   text-align: center;
@@ -226,7 +225,7 @@ li a {
   text-decoration: none;
 }
 
-li a:hover {
+.liNav a:hover {
   background-color: rgba(255, 255, 255, 0.259);
 }
 </style>

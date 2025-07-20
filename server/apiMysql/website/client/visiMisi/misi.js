@@ -40,7 +40,7 @@ router.post('/view', (req, res) => {
             FOR datax in misi
             FILTER datax.des_kel == '`+req.body.des_kel+`'
             FILTER LOWER(datax.judul) LIKE '%`+cari+`%'
-            SORT datax._key
+            SORT datax.createdAt ASC
             LIMIT `+data_star+`, `+data_batas+`
             RETURN datax
         )

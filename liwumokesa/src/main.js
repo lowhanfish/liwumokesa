@@ -12,6 +12,8 @@ Vue.use(VueGeolocation);
 import VueRandomColor from 'vue-randomcolor'
 Vue.use(VueRandomColor)
 
+import Editor from '@tinymce/tinymce-vue'; // Impor komponen TinyMCE
+Vue.component('tinymce-editor', Editor);
 
 // import Dropdown from 'vue-simple-search-dropdown';
 // Vue.use(Dropdown);
