@@ -1,3 +1,4 @@
+````markdown
 # Backend Server - Village Management Application
 
 This backend application has been tested using **Node.js version > 18.19.0**.
@@ -7,9 +8,14 @@ This backend application has been tested using **Node.js version > 18.19.0**.
 Before running this application, make sure you have:
 
 1. Installed **ArangoDB** on your server or local machine.
-2. Created a `.env` file in the project root directory with the following structure:
+2. Created a `.env` file in the project root directory with the following content:
 
-HOST_DB = <ip server arango>
-NAME_DB = <nama database>
-USER_DB = <username database>
-PASS_DB = <password database>
+```env
+TOKEN_SECRET=<your own secret key>
+
+HOST_DB=<ArangoDB server IP address>
+NAME_DB=<database name>
+USER_DB=<database username>
+PASS_DB=<database password>
+```
+````
