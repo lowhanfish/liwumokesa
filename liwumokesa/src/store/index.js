@@ -19,6 +19,7 @@ Vue.use(Vuex)
 
 const store1 = {
   state: {
+    APP_NAME : 'Liwu Mokesa',
     KAT : 'Desa', //(Desa, Kelurahan)
     // ID_DES_KEL : 'moramo_utara4',
     ID_DES_KEL : 'konda12',

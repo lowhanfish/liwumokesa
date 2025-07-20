@@ -29,6 +29,7 @@ export default new Vuex.Store({
 
 
     url: {
+      APP_NAME : 'Liwu Mokesa',
       URL_CLIENT : URL_CLIENT,
       URL_APP: URL,
 

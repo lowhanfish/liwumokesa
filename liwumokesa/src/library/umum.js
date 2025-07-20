@@ -1,5 +1,10 @@
 const tglConvert = (tgl) => {
-    var date = new Date(parseInt(tgl));
+
+    var date = new Date(tgl);
+
+    console.log("tgl" ,date)
+    console.log("bulan", date.getMonth())
+
     var getBulan = date.getMonth() + 1; var bulan = '';
     if (getBulan == '1') {bulan = 'Jan'} 
     else if(getBulan == '2') {bulan = 'Feb'}
