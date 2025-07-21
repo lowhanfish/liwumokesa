@@ -1,3 +1,6 @@
+<img width="567" height="567" alt="New Project (1)" src="https://github.com/user-attachments/assets/a43ffa28-dffa-4d9a-bd69-40b39b8ad00b" />
+
+
 # liwumokesa (Village Data Management and Public Service Application)
 
 "Liwumokesa" is a data and information management application, as well as a village service platform in the public sector
