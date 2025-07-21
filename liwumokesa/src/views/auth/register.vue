@@ -601,7 +601,7 @@ export default {
         .then((res_data) => {
           this.list_level = res_data;
           // this.$store.commit("hideLoading");
-          console.log(res_data);
+          // console.log(res_data);
         });
     },
 
@@ -646,7 +646,7 @@ export default {
     },
 
     filterDesKel: function (val, update, abort) {
-      console.log(val);
+      // console.log(val);
       update(() => {
         if (val === "") {
         } else {

@@ -15,8 +15,7 @@ router.post('/view', (req, res) => {
     var cari = req.body.cari_value;
     if (data_star <0) {data_star = 0} 
 
-
-    console.log(req.body)
+    // console.log(req.body)
 
 
     var query = `
