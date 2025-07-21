@@ -165,12 +165,23 @@
                               input-debounce="0"
                               :options="list_JenisPamongJabatan"
                               option-value="id"
-                              option-label="uraian"
+                              option-label="labelGabungan"
                               @filter="postList"
                               emit-value
                               map-options
                               clearable outlined square :dense="true"
+                              style="max-width: 100%; width: 100%"
                             >
+                              <template v-slot:selected="scope">
+                                <q-item>
+                                  <q-item-section>
+                                    <q-item-label class="text-wrap" style="white-space: normal !important; word-break: break-word !important; ">
+                                      <div>{{ scope.opt.uraian }}</div>
+                                      <small class="text-caption">{{ scope.opt.keterangan }}</small>
+                                    </q-item-label>
+                                  </q-item-section>
+                                </q-item>
+                              </template>                            
                               <template v-slot:no-option>
                                 <q-item>
                                   <q-item-section class="text-grey">
@@ -281,12 +292,23 @@
                               input-debounce="0"
                               :options="list_JenisPamongJabatan"
                               option-value="id"
-                              option-label="uraian"
+                              option-label="labelGabungan"
                               @filter="postList"
                               emit-value
                               map-options
                               clearable outlined square :dense="true"
                             >
+                              <template v-slot:selected="scope">
+                                <q-item>
+                                  <q-item-section>
+                                    <q-item-label class="text-wrap" style="white-space: normal !important; word-break: break-word !important; ">
+                                      <div>{{ scope.opt.uraian }}</div>
+                                      <small class="text-caption">{{ scope.opt.keterangan }}</small>
+                                    </q-item-label>
+                                  </q-item-section>
+                                </q-item>
+                              </template>    
+
                               <template v-slot:no-option>
                                 <q-item>
                                   <q-item-section class="text-grey">
@@ -858,7 +880,14 @@ export default {
         uraian : '',
         masterkelompokPamongJabatan : this.form.masterkelompokPamongJabatan
       }
-      this.list_JenisPamongJabatan = await FETCHING.FETCH_POST(this.$store.state.url.URL_DATAMASTER_JENIS_PAMONG_JABATAN+'list', body)
+      // this.list_JenisPamongJabatan = await FETCHING.FETCH_POST(this.$store.state.url.URL_DATAMASTER_JENIS_PAMONG_JABATAN+'list', body)
+
+                      const result = await FETCHING.FETCH_POST(this.$store.state.url.URL_DATAMASTER_JENIS_PAMONG_JABATAN+'list', body)
+
+      this.list_JenisPamongJabatan = result.map(item => ({
+        ...item,
+        labelGabungan: ` ${item.uraian} | ${item.keterangan}`
+      }))
 
 
     },
@@ -884,7 +913,14 @@ export default {
           if (val === '') {}
           else {
             const body = {uraian : val}
-            this.list_JenisPamongJabatan = await FETCHING.FETCH_POST(this.$store.state.url.URL_DATAMASTER_JENIS_PAMONG_JABATAN+'list', body)
+            
+            const result = await FETCHING.FETCH_POST(this.$store.state.url.URL_DATAMASTER_JENIS_PAMONG_JABATAN+'list', body)
+
+            this.list_JenisPamongJabatan = result.map(item => ({
+              ...item,
+              labelGabungan: ` ${item.uraian} | ${item.keterangan}`
+            }))
+
           }
         })
     },
@@ -973,3 +1009,10 @@ export default {
 
 
  
+
+
+<style scoped>
+q-menu q-position-engine scroll {
+  z-index: 9999 !important;
+}
+</style>
