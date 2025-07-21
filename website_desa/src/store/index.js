@@ -15,8 +15,8 @@ Vue.use(Vuex)
 var URL = 'http://localhost:5011/';
 // var URL = 'https://serverdesa.konaweselatankab.go.id/';
 
-var URL_CLIENT = 'https://desa.konaweselatankab.go.id/';
-// var URL_CLIENT = 'http://localhost:8080';
+// var URL_CLIENT = 'https://desa.konaweselatankab.go.id/';
+var URL_CLIENT = 'http://localhost:8080';
 
 
 export default new Vuex.Store({
