@@ -31,12 +31,14 @@
               <tr class="h_table_head bg-grey-5">
                 <th width="5%" class="text-center">No</th>
                 <th width="10%" class="text-center">Kode/Id</th>
-                <th width="75%">Uraian</th>
+                <th width="10%" class="text-center">Satuan</th>
+                <th width="65%">Uraian</th>
                 <th width="10%"></th>
               </tr>
               <tr class="h_table_body" v-for="(data, index) in list_data" :key="data._key">
                 <td class="text-center">{{indexing(index+1)}}.</td>
                 <td class="text-center">{{data.id}}</td>
+                <td>{{data.satuan}}</td>
                 <td>{{data.uraian}}</td>
                 <td class="text-center">
                   <q-btn-group>
@@ -117,6 +119,9 @@
                         <span class="h_lable ">Kode</span>
                         <q-input v-model="form.id" outlined square :dense="true" class="bg-white margin_btn" /> 
                         <br>
+                        <span class="h_lable ">Satuan</span>
+                        <q-input v-model="form.satuan" outlined square :dense="true" class="bg-white margin_btn" />
+                        <br>
                         <span class="h_lable ">Uraian</span>
                         <q-input v-model="form.uraian" outlined square :dense="true" class="bg-white margin_btn" /> 
 
@@ -143,7 +148,10 @@
                   <q-card-section class="q-pt-none">
                         <br>
                         <span class="h_lable ">Kode</span>
-                        <q-input v-model="form.id" outlined square :dense="true" class="bg-white margin_btn" /> 
+                        <q-input v-model="form.id" outlined square :dense="true" class="bg-white margin_btn" />
+                        <br>
+                        <span class="h_lable ">Satuan</span>
+                        <q-input v-model="form.satuan" outlined square :dense="true" class="bg-white margin_btn" /> 
                         <br>
                         <span class="h_lable ">Uraian</span>
                         <q-input v-model="form.uraian" outlined square :dense="true" class="bg-white margin_btn" /> 
@@ -205,6 +213,7 @@ export default {
 
       form : {
         id : '',
+        satuan : '',
         uraian : '',
         createdAt : '',
       },
@@ -299,6 +308,7 @@ export default {
     },
     selectData : function(data){
         this.form.id = data.id;
+        this.form.satuan = data.satuan;
         this.form.uraian = data.uraian;
         this.form.createdAt = data.createdAt;
     },
