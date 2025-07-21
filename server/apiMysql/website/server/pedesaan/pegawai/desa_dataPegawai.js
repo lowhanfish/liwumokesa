@@ -14,6 +14,10 @@ const router = express.Router();
 
 
 router.post('/view', (req, res) => {
+
+    console.log("data pegawai dari website dipanggilzzz")
+
+
     // console.log(req.body)
     var data_ke = req.body.data_ke - 1
     var data_batas = req.body.page_limit;
@@ -53,9 +57,6 @@ router.post('/view', (req, res) => {
                     FILTER masterkelompokPamongJabatanx.id == masterJenisPamongJabatanx.masterkelompokPamongJabatan
                     return masterkelompokPamongJabatanx
                 )
-
-
-
 
                 return {
                     masterJenisPamongJabatanx_uraian : masterJenisPamongJabatanx.uraian,
