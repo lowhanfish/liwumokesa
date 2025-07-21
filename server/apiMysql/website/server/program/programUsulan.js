@@ -21,6 +21,7 @@ router.get('/', (req, res) => {
 });
 
 router.post('/view', (req, res) => {
+    // console.log("Program versi admin di panggil")
 
     console.log(req.body)
  
@@ -98,7 +99,7 @@ router.post('/view', (req, res) => {
             `+cari_kecamatan+`
             `+cari_des_kel+`
             FILTER datax.uraian LIKE '%`+cari+`%'
-            SORT datax._key DESC
+            SORT datax.createdAt ASC
             LIMIT `+data_star+`, `+data_batas+`
             RETURN datax
         )

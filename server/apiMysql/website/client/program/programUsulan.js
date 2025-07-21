@@ -21,6 +21,8 @@ router.get('/', (req, res) => {
 });
 
 router.post('/view', (req, res) => {
+
+    // console.log("Program versi web di panggil")
  
     var data_ke = req.body.data_ke - 1
     var data_batas = req.body.page_limit;
@@ -40,7 +42,7 @@ router.post('/view', (req, res) => {
             FOR datax in programUsulan
             FILTER datax.des_kel == '`+req.body.des_kel+`'
             FILTER LOWER(datax.uraian) LIKE '%`+cari+`%'
-            SORT datax._key DESC
+            SORT datax.createdAt ASC
             LIMIT `+data_star+`, `+data_batas+`
             RETURN datax
         )
