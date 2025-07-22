@@ -91,6 +91,7 @@
             :name="index + 1"
             class="column no-wrap flex-center"
           >
+            {{ $store.state.url.URL_APP + "uploads/" + data.file }}
             <img
               style="height: 100%; width: auto"
               :src="$store.state.url.URL_APP + 'uploads/' + data.file"
@@ -523,9 +524,9 @@ export default {
       })
         .then((res) => res.json())
         .then((res_data) => {
-          // console.log('BBBBBBBBBBBBBBBBBB');
-          console.log(res_data);
-          // console.log('BBBBBBBBBBBBBBBBBB');
+          // console.log("BBBBBBBBBBBBBBBBBB");
+          // console.log(res_data);
+          // console.log("BBBBBBBBBBBBBBBBBB");
 
           this.listInfografis = res_data;
 

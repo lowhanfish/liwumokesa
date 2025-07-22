@@ -12,7 +12,8 @@ Vue.use(Vuex)
 
 
 
-var URL = 'http://localhost:5011/';
+// var URL = 'http://localhost:5011/';
+var URL = 'https://desa.munabarat.go.id/';
 // var URL = 'https://serverdesa.konaweselatankab.go.id/';
 
 // var URL_CLIENT = 'https://desa.konaweselatankab.go.id/';

@@ -4,7 +4,8 @@ import Vuex from 'vuex'
 import { Loading, QSpinnerFacebook, } from 'quasar'
 import { Notify } from 'quasar'
 
-var URL = 'http://localhost:5011/';
+// var URL = 'http://localhost:5011/';
+var URL = 'https://desa.munabarat.go.id/';
 // var URL = 'http://192.168.1.8:5011/';
 // :8080
 // var URL = 'https://serverdesa.konaweselatankab.go.id/';
