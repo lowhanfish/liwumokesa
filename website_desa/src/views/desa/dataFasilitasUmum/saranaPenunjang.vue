@@ -48,7 +48,7 @@
                         <tr v-for="(data, index) in list_data" :key="index" >
                             <td class="text-center">{{indexing(index+1)}}.</td>
                             <td class="text-left">{{data.des_kel_uraian}} </td>
-                            <td class="text-left"> {{data.masterFasilitasUmum_uraian}} </td> 
+                            <td class="text-left"> {{data.masterFasilitasPenunjang_uraian}} </td> 
                             <td class="text-center"> {{data.jumlah}} </td> 
                         </tr> 
                     </tbody>

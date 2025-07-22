@@ -46,8 +46,8 @@
                             </q-item-section>
 
                             <q-item-section>
-                              <q-item-label lines="1">Surat Keterangan Belum Menikah ({{data.data.createdAt}})</q-item-label>
-                              <q-item-label caption>February 22nd, 2019</q-item-label>
+                              <q-item-label lines="1">Surat Keterangan Belum Menikah ({{data.data.nama}})</q-item-label>
+                              <q-item-label caption>{{data.data.createdAt}}</q-item-label>
                             </q-item-section>
 
                             <q-item-section side>
@@ -478,6 +478,7 @@ export default {
                   this.$store.commit("hideLoading");
 
                   this.LIST_DATA = res_data
+                  console.log("res_data");
                   console.log(res_data);
           });
         },
