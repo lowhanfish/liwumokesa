@@ -117,7 +117,7 @@
 
           <div class="text-center col-6 col-md-2 q-mt-xl">
             <div>
-              <a href="http://liwumokesa.munabaratkab.go.id/#/">
+              <a :href="$store.state.url.APP_ADMIN_URL">
                 <q-icon
                   class="imgHover"
                   name="img:img/logo_app.png"

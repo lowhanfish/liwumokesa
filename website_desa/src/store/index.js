@@ -30,6 +30,7 @@ export default new Vuex.Store({
 
     url: {
       APP_NAME : 'Liwu Mokesa',
+      APP_ADMIN_URL : 'https://liwumokesa.munabarat.go.id/',
       URL_CLIENT : URL_CLIENT,
       URL_APP: URL,
 
