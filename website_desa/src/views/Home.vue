@@ -91,7 +91,7 @@
             :name="index + 1"
             class="column no-wrap flex-center"
           >
-            {{ $store.state.url.URL_APP + "uploads/" + data.file }}
+            <!-- {{ $store.state.url.URL_APP + "uploads/" + data.file }} -->
             <img
               style="height: 100%; width: auto"
               :src="$store.state.url.URL_APP + 'uploads/' + data.file"
